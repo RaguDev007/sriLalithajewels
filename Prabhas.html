@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="te">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>బంగారం తాకట్టు — విముక్తి పరిష్కారం</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+        :root {
+            --gold: #b8860b;
+            --soft-gold: #c9a46a;
+            --ink: #2f2f2f;
+            --bg1: #fdfcfb;
+            --bg2: #e2d1c3;
+            --accent: #d4af37;
+            --light: #fff9e6;
+            --dark: #1a1a1a;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Noto Sans Telugu', 'Poppins', sans-serif;
+            background: linear-gradient(135deg, var(--bg1), var(--bg2));
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+        }
+
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--gold);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .translate-btn {
+            background: linear-gradient(135deg, var(--gold), var(--soft-gold));
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 12px rgba(184, 134, 11, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .translate-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(184, 134, 11, 0.4);
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        @media (min-width: 992px) {
+            .main-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 24px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, .12);
+            padding: 32px 28px;
+            width: 100%;
+            border: 1px solid rgba(0, 0, 0, .06);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .title {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-weight: 700;
+            color: var(--gold);
+            font-size: 1.6rem;
+            margin: 0 0 12px;
+            text-align: center;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #6b5b3e;
+            font-weight: 600;
+            margin: 0 0 20px;
+            font-size: 1rem;
+        }
+
+        .content {
+            color: var(--ink);
+            line-height: 1.9;
+            font-size: 1.05rem;
+        }
+
+        .content p {
+            margin: 0 0 10px;
+        }
+
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #ead9bf, transparent);
+            margin: 14px 0;
+        }
+
+        .cta {
+            margin-top: 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .call,
+        .whatsapp {
+            display: inline-block;
+            text-decoration: none;
+            background: linear-gradient(135deg, #ffefc2, #f7d99b);
+            border: 1px solid #e7c580;
+            color: #5a4320;
+            padding: 12px 18px;
+            border-radius: 14px;
+            font-weight: 700;
+            letter-spacing: .3px;
+            box-shadow: 0 6px 16px rgba(184, 134, 11, .18);
+            transition: all 0.3s ease;
+            width: 100%;
+            text-align: center;
+        }
+
+        .whatsapp {
+            background: linear-gradient(135deg, #d4f9d4, #9be59b);
+            border: 1px solid #7ad67a;
+            color: #1c5e1c;
+        }
+
+        .call:hover,
+        .whatsapp:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(184, 134, 11, .25);
+        }
+
+        .note {
+            font-size: .92rem;
+            color: #6a6a6a;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .quotation {
+            font-style: italic;
+            text-align: center;
+            margin: 20px 0;
+            padding: 15px;
+            background: var(--light);
+            border-left: 4px solid var(--gold);
+            border-radius: 8px;
+            font-size: 1.1rem;
+            color: var(--dark);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px;
+            color: #6a6a6a;
+            font-size: 0.9rem;
+        }
+
+        @media (min-width: 640px) {
+            .title {
+                font-size: 1.9rem;
+            }
+
+            .content {
+                font-size: 1.08rem;
+            }
+
+            .cta {
+                flex-direction: row;
+                justify-content: center;
+            }
+
+            .call,
+            .whatsapp {
+                width: auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .logo-text {
+                font-size: 1.4rem;
+            }
+
+            .logo-icon {
+                width: 50px;
+                height: 50px;
+            }
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <img class="logo-icon" src="image.png" alt="స్వర్ణ విముక్తి లోగో" style="border-radius: 30%;"
+                    width="300px" height="300px">
+                <div class="logo-text">శ్రీ లలితా జ్వెలరీ -స్వర్ణ విముక్తి</div>
+            </div>
+            <button class="translate-btn" id="translateBtn">
+                <i class="fas fa-language"></i>
+                Translate to English
+            </button>
+        </header>
+
+        <div class="main-content">
+            <div class="card">
+                <h1 class="title">✨ బంగారం — విశ్వాసపు పెట్టుబడి ✨</h1>
+                <p class="subtitle">తాకట్టు బంగారంపై వడ్డీ భారానికి తెలివైన పరిష్కారం</p>
+
+                <div class="content">
+                    <div class="quotation">
+                        "బంగారం — తరతరాల నుండి మనం నమ్మిన ఒకే ఒక పెట్టుబడి.బంగారం కేవలం లోహం కాదు, అది మన విశ్వాసం, మన
+                        సంపద, మన భవిష్యత్తు"
+                    </div>
+
+                    <p> అవసరాలకు బ్యాంకులో తాకట్టు పెట్టి, సమస్యలతో విడిపించుకోలేక, వడ్డీలు తగ్గించుకోలేక, వడ్డీలు కడుతూ
+                        విసిగి పోతున్నారా?</p>
+
+                    <div class="divider"></div>
+
+                    <p>మీ సమస్య మేము అర్థం చేసుకున్నాం. పెరుగుతున్న మీ వడ్డీలకు మేము విముక్తి కలిగిస్తాం.</p>
+
+                    <p>ఆ బంగారాన్ని విడిపించి, వడ్డీలను ఆపి, అదే రోజు రేటుకు రావలసిన డబ్బును మేము మీకు అందిస్తాం. వడ్డీల
+                        నుండి మిమ్మల్ని విముక్తి చేస్తాం.</p>
+
+                    <div class="divider"></div>
+
+                    <p class="note">మరిన్ని వివరాలకు మా నంబర్‌ని సంప్రదించండి.</p>
+                </div>
+
+                <div class="cta">
+                    <a class="call" href="tel:+919640948062" aria-label="ఫోన్ నంబర్ 9640948062 కు కాల్ చేయండి">
+                        <i class="fas fa-phone-alt"></i> 96409 48062 కు కాల్ చేయండి
+                    </a>
+                    <a class="whatsapp" href="https://wa.me/919640948062" target="_blank"
+                        aria-label="వాట్సాప్ లో చాట్ చేయండి">
+                        <i class="fab fa-whatsapp"></i> వాట్సాప్ లో చాట్ చేయండి
+                    </a>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2 class="title">సేవా వివరాలు</h2>
+                <div class="content">
+                    <div class="quotation">
+                        "మీ బంగారం మీ భద్రత, మేము దానికి సాక్షి"
+                    </div>
+
+                    <p><i class="fas fa-check-circle" style="color: var(--gold);"></i> తక్కువ వడ్డీ రేట్లు</p>
+                    <p><i class="fas fa-check-circle" style="color: var(--gold);"></i> త్వరిత ఆర్థిక సహాయం</p>
+                    <p><i class="fas fa-check-circle" style="color: var(--gold);"></i> పారదర్శక ప్రక్రియ</p>
+                    <p><i class="fas fa-check-circle" style="color: var(--gold);"></i> అనుభవజ్ఞుల సలహా</p>
+
+                    <div class="divider"></div>
+
+                    <p class="note">మేము 24 గంటల్లో మీ సమస్యకు పరిష్కారం అందిస్తాము</p>
+                </div>
+
+                <div class="cta">
+                    <a class="call" href="tel:+919640948062">
+                        <i class="fas fa-phone-alt"></i> ఇప్పుడే కాల్ చేయండి
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2023 స్వర్ణ విముక్తి. అన్ని హక్కులు ప్రత్యేకించబడినవి.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Translation functionality
+        document.getElementById('translateBtn').addEventListener('click', function () {
+            const elements = document.querySelectorAll('.title, .subtitle, .content p, .note, .call, .whatsapp, footer p, .quotation');
+
+            elements.forEach(element => {
+                if (element.textContent.includes('బంగారం — విశ్వాసపు పెట్టుబడి')) {
+                    element.textContent = '✨ Gold — The Trustworthy Investment ✨';
+                } else if (element.textContent.includes('తాకట్టు బంగారంపై వడ్డీ భారానికి తెలివైన పరిష్కారం')) {
+                    element.textContent = 'Smart Solution for Interest Burden on Pledged Gold';
+                } else if (element.textContent.includes('బంగారం — తరతరాల నుండి మనం నమ్మిన ఒకే ఒక పెట్టుబడి')) {
+                    element.textContent = 'Gold — The only investment we have trusted for generations.';
+                } else if (element.textContent.includes('అవసరాలకు బ్యాంకులో తాకట్టు పెట్టి, సమస్యలతో విడిపించుకోలేక, వడ్డీలు తగ్గించుకోలేక, వడ్డీలు కడుతూ విసిగి పోతున్నారా')) {
+                    element.textContent = 'Are you tired of paying high interest on gold pledged in banks for your needs, unable to reduce the interest or free yourself from problems?';
+                } else if (element.textContent.includes('మీ సమస్య మేము అర్థం చేసుకున్నాం. పెరుగుతున్న మీ వడ్డీలకు మేము విముక్తి కలిగిస్తాం')) {
+                    element.textContent = 'We understand your problem. We provide relief from your increasing interest rates.';
+                } else if (element.textContent.includes('ఆ బంగారాన్ని విడిపించి, వడ్డీలను ఆపి, అదే రోజు రేటుకు రావలసిన డబ్బును మేము మీకు అందిస్తాం. వడ్డీల నుండి మిమ్మల్ని విముక్తి చేస్తాం')) {
+                    element.textContent = 'We will free that gold, stop the interest, and provide you with the required money at the same day rate. We will free you from interest burdens.';
+                } else if (element.textContent.includes('మరిన్ని వివరాలకు మా నంబర్‌ని సంప్రదించండి')) {
+                    element.textContent = 'Contact our number for more details.';
+                } else if (element.textContent.includes('కు కాల్ చేయండి')) {
+                    element.textContent = 'Call 96409 48062';
+                } else if (element.textContent.includes('వాట్సాప్ లో చాట్ చేయండి')) {
+                    element.textContent = 'Chat on WhatsApp';
+                } else if (element.textContent.includes('సేవా వివరాలు')) {
+                    element.textContent = 'Service Details';
+                } else if (element.textContent.includes('ఇప్పుడే కాల్ చేయండి')) {
+                    element.textContent = 'Call Now';
+                } else if (element.textContent.includes('మీ బంగారం మీ భద్రత, మేము దానికి సాక్షి')) {
+                    element.textContent = '"Your gold is your security, we are its witness"';
+                } else if (element.textContent.includes('తక్కువ వడ్డీ రేట్లు')) {
+                    element.textContent = 'Low Interest Rates';
+                } else if (element.textContent.includes('త్వరిత ఆర్థిక సహాయం')) {
+                    element.textContent = 'Quick Financial Assistance';
+                } else if (element.textContent.includes('పారదర్శక ప్రక్రియ')) {
+                    element.textContent = 'Transparent Process';
+                } else if (element.textContent.includes('అనుభవజ్ఞుల సలహా')) {
+                    element.textContent = 'Expert Advice';
+                } else if (element.textContent.includes('మేము 24 గంటల్లో మీ సమస్యకు పరిష్కారం అందిస్తాము')) {
+                    element.textContent = 'We provide solutions to your problems within 24 hours';
+                } else if (element.textContent.includes('స్వర్ణ విముక్తి. అన్ని హక్కులు ప్రత్యేకించబడినవి')) {
+                    element.textContent = '© 2023 Swarna Vimukthi. All rights reserved.';
+                } else if (element.textContent.includes('బంగారం కేవలం లోహం కాదు, అది మన విశ్వాసం, మన సంపద, మన భవిష్యత్తు')) {
+                    element.textContent = '"Gold is not just a metal, it is our faith, our wealth, our future"';
+                }
+            });
+
+            // Change button text
+            if (this.textContent.includes('Translate to English')) {
+                this.innerHTML = '<i class="fas fa-language"></i> తెలుగులోకి అనువదించండి';
+            } else {
+                this.innerHTML = '<i class="fas fa-language"></i> Translate to English';
+            }
+        });
+    </script>
+</body>
+
+</html>
